@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import apiData from "./api/apiData.json";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { render } from "@testing-library/react";
+import PokeList from "./PokeList.js";
+// import './App.css';
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      pokemons: apiData,
+    };
+  }
+
+  render() {
+    console.log(this.state.pokemons);
+    return (
+      <div>
+        <div>
+          <h1>Mi lista de Pokemon</h1>
+          <PokeList />
+        </div>
+        <h1>Lista</h1>
+        <ul>
+          <li>
+            <img src="" alt="" />
+            <h2>nombre pokemon</h2>
+            <ul>
+              <li>propiedad del pokemon</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    );
+  }
 }
 
 export default App;
