@@ -14,7 +14,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.pokemons);
+    console.log("en render de App:", this.state.pokemons);
     return (
       <div>
         <div>
