@@ -19,7 +19,13 @@ class App extends React.Component {
       <div>
         <div>
           <h1>Mi lista de Pokemon</h1>
-          <PokeList />
+          <ul>
+            <PokeList>
+              {this.state.pokemons.map(() => {
+                return <p>hola pokes</p>;
+              })}
+            </PokeList>
+          </ul>
         </div>
         <h1>Lista</h1>
         <ul>

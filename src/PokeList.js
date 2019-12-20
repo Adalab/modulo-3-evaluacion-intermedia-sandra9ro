@@ -2,17 +2,15 @@ import React from "react";
 import Pokemon from "./Pokemon";
 
 function PokeList(props) {
-  console.log("me traigo: ", props.state);
+  console.log(props);
+  console.log("me traigo: ", props.pokemons);
   return (
-    <ul>
-      <li>
-        <img src="" alt="" />
-        <h2></h2>
-        <ul>
-          <Pokemon />
-        </ul>
-      </li>
-    </ul>
+    <li>
+      <img src={props.pokemons.url} alt="" />
+      <h2>{props.pokemons.name}</h2>
+      <Pokemon />
+      <ul></ul>
+    </li>
   );
 }
 
