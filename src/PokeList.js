@@ -2,16 +2,21 @@ import React from "react";
 import Pokemon from "./Pokemon";
 
 function PokeList(props) {
-  console.log(props);
-  console.log("me traigo: ", props.pokemons);
-  return (
-    <li>
-      <img src={props.pokemons.url} alt="" />
-      <h2>{props.pokemons.name}</h2>
-      <Pokemon />
-      <ul></ul>
-    </li>
-  );
+  return props.pokemons.map(item => {
+    return (
+      <li key={item.id}>
+        <h3>{item.name}</h3>
+        <img
+          src={item.url}
+          alt={`Imagen de ${item.name}`}
+          title={`Imagen de ${item.name}`}
+        />
+        <ol>
+          <Pokemon element={item.types} />
+        </ol>
+      </li>
+    );
+  });
 }
 
 export default PokeList;
