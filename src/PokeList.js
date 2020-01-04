@@ -4,16 +4,17 @@ import Pokemon from "./Pokemon";
 function PokeList(props) {
   return props.pokemons.map(item => {
     return (
-      <li key={item.id}>
-        <h3>{item.name}</h3>
+      <li className="card" key={item.id}>
         <img
+          className="poke-img"
           src={item.url}
           alt={`Imagen de ${item.name}`}
           title={`Imagen de ${item.name}`}
         />
-        <ol>
+        <h3 className="poke-name">{item.name}</h3>
+        <ul className="type-container">
           <Pokemon element={item.types} />
-        </ol>
+        </ul>
       </li>
     );
   });

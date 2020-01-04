@@ -3,7 +3,7 @@ import apiData from "./api/apiData.json";
 
 // import { render } from "@testing-library/react";
 import PokeList from "./PokeList.js";
-// import './App.css';
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -15,10 +15,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Mi lista de Pokemon</h1>
-        <ul>
-          <PokeList pokemons={this.state.pokemons} />
+      <div className="main-container">
+        <h1 className="main-title">Mi lista de Pokemon</h1>
+        <ul className="main-list">
+          <PokeList className="cards" pokemons={this.state.pokemons} />
         </ul>
       </div>
     );
